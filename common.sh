@@ -6,7 +6,7 @@ handle_error(){
     echo "Error occured at line number: $1, error comand: $2"
 }
 
-trap 'handle_error ${LINENO} "$Bash_COMMAND"'
+trap 'handle_error ${LINENO} "$Bash_COMMAND"' ERR
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
